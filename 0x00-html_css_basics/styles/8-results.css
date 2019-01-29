@@ -1,0 +1,17 @@
+#container {
+  max-width: 1000px;
+  background-color: #fff;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article {
+  width: 300px;
+  background-color: #fff;
+  position: relative;
+  min-height: 110px;
+  margin: 10px;
+  border: #ccc solid 1px;
+  border-radius: 10px;
+}
