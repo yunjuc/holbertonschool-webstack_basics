@@ -1,0 +1,30 @@
+==============================
+13-add_integer test
+==============================
+
+** import
+>>> add_integer = __import__('13-add_integer').add_integer
+
+** test 1: add two int
+>>> add_integer(1, 2)
+3
+
+** test 2: add two floats
+>>> add_integer(1.0, 2.0)
+3
+
+** test 3: a is string
+>>> add_integer('a', 2)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+** test 4: b is string
+>>> add_integer(1, 'b')
+Traceback (most recent call last):
+  ...
+TypeError: b must be an integer
+
+** test 5: return int
+>>> isinstance(add_integer(1.0, 2), int)
+True
