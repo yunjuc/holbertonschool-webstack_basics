@@ -16,11 +16,16 @@ class TestMaxInteger(unittest.TestCase):
         res = max_integer([])
         self.assertEqual(res, None)
 
-    def test_negetive(self):
+    def test_has_negetive(self):
         '''test list with negative int'''
         res = max_integer([19, -3, -45, 27])
         self.assertEqual(res, 27)
 
+    def test_all_negetive(self):
+        '''test list with all negative int'''
+        res = max_integer([-19, -3, -45, -27])
+        self.assertEqual(res, -3)
+ 
     def test_float(self):
         '''test float numbers'''
         res = max_integer([0, 4, 7.0])
