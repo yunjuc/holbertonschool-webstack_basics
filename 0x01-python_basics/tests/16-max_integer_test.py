@@ -25,7 +25,7 @@ class TestMaxInteger(unittest.TestCase):
         '''test list with all negative int'''
         res = max_integer([-19, -3, -45, -27])
         self.assertEqual(res, -3)
- 
+
     def test_float(self):
         '''test float numbers'''
         res = max_integer([0, 4, 7.0])
