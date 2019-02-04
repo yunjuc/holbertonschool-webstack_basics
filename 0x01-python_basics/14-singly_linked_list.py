@@ -42,9 +42,18 @@ class SinglyLinkedList:
         self.__head = None
 
     def __str__(self):
-        while self.__head is not None:
-            print(self.__head.data)
-            self.__head = self.__head.next_node
+        '''return list in string representation'''
+        res = ""
+        if self.__head is None:
+            return res
+        current = self.__head
+        while current:
+            if current.next_node is None:
+                res += str(current.data)
+            else:
+                res += str(current.data) + '\n'
+            current = current.next_node
+        return res
 
     def sorted_insert(self, value):
         '''insert node to sorted list'''
@@ -52,24 +61,17 @@ class SinglyLinkedList:
             self.__head = Node(value)
             return
 
-        if self.__head.next_node is not None:
-            while self.__head.next_node:
-                if value <= self.__head.data:
-                    temp = self.__head
-                    self.__head = Node(value)
-                    self.__head.next_node = temp
-                    return
-                elif value <= self.__head.next_node.data:
-                    temp = self.__head.next_node
-                    self.__head.next_node = Node(value)
-                    self.__head.next_node.next_node = temp
-                    return
-                self.__head = self.__head.next_node
-
-        if value > self.__head.data:
-            self.__head.next_node = Node(value)
-            return
-        else:
-            temp = self.__head
-            self.__head = Node(value)
-            self.__head.next_node = temp
+        current = self.__head
+        while current.next_node:
+            if value < self.__head.data:
+                temp = self.__head
+                self.__head = Node(value)
+                self.__head.next_node = temp
+                return
+            elif value < current.next_node.data:
+                temp = current.next_node
+                current.next_node = Node(value)
+                current.next_node.next_node = temp
+                return
+            current = current.next_node
+        current.next_node = Node(value)
