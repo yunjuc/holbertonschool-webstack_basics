@@ -73,5 +73,15 @@ class SinglyLinkedList:
                 current.next_node = Node(value)
                 current.next_node.next_node = temp
                 return
-            current = current.next_node
+            current = current.next_node;
+        if not self.__head.next_node and value <= self.__head.data:
+            temp = self.__head
+            self.__head = Node(value)
+            self.__head.next_node = temp
+            return
+        elif value <= current.data:
+            temp = current.next_node
+            current.next_node = Node(value)
+            current.next_node.next_node = temp
+            return
         current.next_node = Node(value)
