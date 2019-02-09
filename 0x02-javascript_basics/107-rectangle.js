@@ -7,7 +7,7 @@ exports.Rectangle = function Rectangle (w, h) {
     this.height = h;
   }
 
-  Rectangle.prototype.print = () => {
+  this.print = () => {
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
         process.stdout.write('X');
@@ -16,13 +16,13 @@ exports.Rectangle = function Rectangle (w, h) {
     }
   };
 
-  Rectangle.prototype.rotate = () => {
+  this.rotate = () => {
     let temp = this.height;
     this.width = this.height;
     this.height = temp;
   };
 
-  Rectangle.prototype.double = () => {
+  this.double = () => {
     this.width *= 2;
     this.height *= 2;
   };
