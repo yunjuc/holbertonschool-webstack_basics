@@ -17,7 +17,7 @@ exports.Rectangle = function Rectangle (w, h) {
   };
 
   this.rotate = () => {
-    let temp = this.height;
+    let temp = this.width;
     this.width = this.height;
     this.height = temp;
   };
