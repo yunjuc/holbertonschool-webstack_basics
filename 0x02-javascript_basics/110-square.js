@@ -1,15 +1,10 @@
 #!/usr/bin/node
-const Rectangle = require('./9-rectangle').Rectangle;
+const base = require('./109-square').Square;
 
 function Square (size) {
-  Rectangle.call(this, size, size);
+  base.call(this, size, size);
 
-  Square.prototype.double = () => {
-    this.width *= 2;
-    this.height *= 2;
-  };
-
-  Square.prototype.charPrint = (x) => {
+  this.charPrint = (x) => {
     if (x) {
       for (let i = 0; i < this.width; i++) {
         for (let j = 0; j < this.width; j++) {
@@ -20,8 +15,5 @@ function Square (size) {
     } else this.print();
   };
 }
-
-Square.prototype = Object.create(Rectangle.prototype);
-Square.prototype.constructor = Square;
 
 module.exports = { Square };
