@@ -16,7 +16,7 @@ if __name__ == "__main__":
     data = {'grant_type': 'client_credentials'}
     r = requests.post(url_auth, headers=headers, data=data)
     b_token = r.json().get('access_token')
-    
+
     # make api request
     headers = {'Authorization': 'Bearer '+b_token}
     url_api = 'https://api.twitter.com/1.1/search/tweets.json'
