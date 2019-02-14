@@ -10,7 +10,8 @@ if __name__ == "__main__":
     while r:
         try:
             r = r.json()
-            print("Number of results: {}".format(r.get('count')))
+            if not r.get('previous'): 
+                print("Number of results: {}".format(r.get('count')))
             for i in r.get('results'):
                 print(i.get('name'))
             r = requests.get(r.get('next'))
