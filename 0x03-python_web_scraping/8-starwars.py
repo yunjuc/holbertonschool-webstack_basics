@@ -3,12 +3,10 @@
 import requests
 import sys
 
-url = 'https://swapi.co/api/people/'
-payload = {'search': sys.argv[1]}
-
-r = requests.get(url, params=payload)
-
 if __name__ == "__main__":
+    url = 'https://swapi.co/api/people/'
+    payload = {'search': sys.argv[1]}
+    r = requests.get(url, params=payload)
     while r:
         try:
             r = r.json()

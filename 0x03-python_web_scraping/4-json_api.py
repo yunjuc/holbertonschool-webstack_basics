@@ -4,15 +4,15 @@ import sys
 import requests
 
 
-if len(sys.argv) == 1:
-    q = ""
-else:
-    q = sys.argv[1]
-payload = {'q': q}
-
-r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
-
 if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        q = ""
+    else:
+        q = sys.argv[1]
+
+    payload = {'q': q}
+    r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
+
     try:
         r = r.json()
         if r:
