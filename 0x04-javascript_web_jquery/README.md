@@ -1,1 +1,2 @@
-## 0x04. Javascript - Web JQuery
+## 0x04. Javascript - Web jQuery
+Review jQuery basic concepts.
